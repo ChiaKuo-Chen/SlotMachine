@@ -6,17 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		119368312CF0784100D8E7F0 /* SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		111F34362D0447FC008A9EE9 /* RollingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F34352D0447FC008A9EE9 /* RollingNumberView.swift */; };
+		112918C42CF85F540072CC2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112918C02CF85F540072CC2B /* ContentView.swift */; };
+		119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119368462CF0785200D8E7F0 /* SlotMachineApp.swift */; };
+		1193684B2CF0785200D8E7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119368442CF0785200D8E7F0 /* Assets.xcassets */; };
+		119EEB1C2D1C076D0087704A /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119EEB1B2D1C076D0087704A /* StarView.swift */; };
+		11A100B72D0C29B200849E0A /* RollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A100B62D0C29B200849E0A /* RollerView.swift */; };
+		11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF95702D11712100E3C6EB /* RollerImageView.swift */; };
+		11EC2AC72D27EA8C0011E3BE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EC2AC62D27EA8C0011E3BE /* TestView.swift */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		119368332CF0784100D8E7F0 /* SlotMachine */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SlotMachine;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		111F34352D0447FC008A9EE9 /* RollingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingNumberView.swift; sourceTree = "<group>"; };
+		112918C02CF85F540072CC2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		119368312CF0784100D8E7F0 /* SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		119368442CF0785200D8E7F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		119368462CF0785200D8E7F0 /* SlotMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineApp.swift; sourceTree = "<group>"; };
+		119EEB1B2D1C076D0087704A /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		11A100B62D0C29B200849E0A /* RollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerView.swift; sourceTree = "<group>"; };
+		11DF95702D11712100E3C6EB /* RollerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerImageView.swift; sourceTree = "<group>"; };
+		11EC2AC62D27EA8C0011E3BE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1193682E2CF0784100D8E7F0 /* Frameworks */ = {
@@ -29,10 +40,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112918C32CF85F540072CC2B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				112918C02CF85F540072CC2B /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1192CB272D0186CF0062D472 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				111F34352D0447FC008A9EE9 /* RollingNumberView.swift */,
+				11A100B62D0C29B200849E0A /* RollerView.swift */,
+				11DF95702D11712100E3C6EB /* RollerImageView.swift */,
+				11EC2AC62D27EA8C0011E3BE /* TestView.swift */,
+				119EEB1B2D1C076D0087704A /* StarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		119368282CF0784100D8E7F0 = {
 			isa = PBXGroup;
 			children = (
-				119368332CF0784100D8E7F0 /* SlotMachine */,
+				119368472CF0785200D8E7F0 /* SlotMachine */,
 				119368322CF0784100D8E7F0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +74,17 @@
 				119368312CF0784100D8E7F0 /* SlotMachine.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		119368472CF0785200D8E7F0 /* SlotMachine */ = {
+			isa = PBXGroup;
+			children = (
+				119368462CF0785200D8E7F0 /* SlotMachineApp.swift */,
+				112918C32CF85F540072CC2B /* App */,
+				1192CB272D0186CF0062D472 /* View */,
+				119368442CF0785200D8E7F0 /* Assets.xcassets */,
+			);
+			path = SlotMachine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +101,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				119368332CF0784100D8E7F0 /* SlotMachine */,
 			);
 			name = SlotMachine;
 			packageProductDependencies = (
@@ -109,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1193684B2CF0785200D8E7F0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +159,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EC2AC72D27EA8C0011E3BE /* TestView.swift in Sources */,
+				119EEB1C2D1C076D0087704A /* StarView.swift in Sources */,
+				11A100B72D0C29B200849E0A /* RollerView.swift in Sources */,
+				119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */,
+				11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */,
+				112918C42CF85F540072CC2B /* ContentView.swift in Sources */,
+				111F34362D0447FC008A9EE9 /* RollingNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +298,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlotMachine/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = WBC4T5V7CF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -280,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SlotMachine/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = WBC4T5V7CF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
