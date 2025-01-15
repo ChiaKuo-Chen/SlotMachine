@@ -17,7 +17,8 @@ struct ContentView: View {
     @State private var playButtonPressed : Bool = false
     @State private var bet : Int = 0
     @State var previousBet : Int = 0
-
+    @State var maskOn : Bool = false
+    
     // MARK: - BODY
     
     var body: some View {
@@ -35,15 +36,20 @@ struct ContentView: View {
             
             VStack(spacing: 10) {
                 
-                RollerImageView(rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, buttonPressed: playButtonPressed)
+                RollerImageView(rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, maskOn: $maskOn, buttonPressed: playButtonPressed)
                     .scaleEffect(0.9)
-                
+                                
                 ScoreView(coinValue: coinValue, bet: bet, previousBet: previousBet)
                     .padding()
                 
                 ButtonView(playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet)
                 
                 
+            }
+            
+            if maskOn {
+                Color.black
+                    .opacity(0.001)
             }
             
         } // ZSTACK

@@ -10,7 +10,6 @@ import SwiftUI
 struct NumbersView: View {
     
     // MARK: - PROPERTIES
-    //var startNumber : Int
     var number : Int
     var digits : Int
 

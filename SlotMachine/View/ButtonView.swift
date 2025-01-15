@@ -18,7 +18,7 @@ struct ButtonView: View {
     // MARK: - BODY
     var body: some View {
         
-
+        
         HStack() {
             Spacer()
             betOneButton
@@ -32,10 +32,8 @@ struct ButtonView: View {
     
     var betOneButton : some View {
         Button(action: {
-            if bet < 3 {
-                bet += 1
-                previousBet = bet
-                coinValue -= 1
+            if playButtonPressed == false {
+                betPlusOne(&bet, &coinValue)
             }
         }, label: {
             Text("BET\nONE")
@@ -46,16 +44,9 @@ struct ButtonView: View {
     var betMaxButton : some View {
         Button(action: {
             if playButtonPressed == false {
-                if 3 <= coinValue {
-                    bet = 3
-                    coinValue -= bet
-                } else if coinValue == 2 {
-                    bet = 2
-                    coinValue -= bet
-                } else {
-                    bet = 1
-                    coinValue -= bet
-                }
+                betPlusOne(&bet, &coinValue)
+                betPlusOne(&bet, &coinValue)
+                betPlusOne(&bet, &coinValue)
                 spinTheWheel(bet)
             }
         }, label: {
@@ -69,7 +60,7 @@ struct ButtonView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundStyle(.white)
                 }
-
+            
         }) // BUTTON
     } // BetThree VIEW
     
@@ -84,11 +75,8 @@ struct ButtonView: View {
                         spinTheWheel(bet)
                     }
                 } else {
-                    if bet <= coinValue {
-                        spinTheWheel(bet)
-                    }
+                    spinTheWheel(bet)
                 }
-                
             }
         }, label: {
             Text("SPIN\nREELS")
@@ -96,6 +84,14 @@ struct ButtonView: View {
         })
         
     } // PLAY BUTTON
+    
+    func betPlusOne(_ bet : inout Int, _ coinValue : inout Int) {
+        if bet < 3 && coinValue >= 1 {
+            bet += 1
+            previousBet = bet
+            coinValue -= 1
+        }
+    } // BET + 1
     
     func spinTheWheel(_ bet: Int) {
         playButtonPressed.toggle()

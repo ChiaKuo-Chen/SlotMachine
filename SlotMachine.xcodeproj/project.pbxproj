@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		112918C42CF85F540072CC2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112918C02CF85F540072CC2B /* ContentView.swift */; };
 		1160A15D2D34FC1C00C27726 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160A15C2D34FC1C00C27726 /* NumbersView.swift */; };
-		117A82C72D36C7F000609F73 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A82C62D36C7F000609F73 /* TestView.swift */; };
+		117A82C72D36C7F000609F73 /* NumberStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A82C62D36C7F000609F73 /* NumberStepView.swift */; };
 		118348B62D2FAF660036EB0F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118348B52D2FAF660036EB0F /* ButtonView.swift */; };
 		119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119368462CF0785200D8E7F0 /* SlotMachineApp.swift */; };
 		1193684B2CF0785200D8E7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119368442CF0785200D8E7F0 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		112918C02CF85F540072CC2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1160A15C2D34FC1C00C27726 /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
-		117A82C62D36C7F000609F73 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		117A82C62D36C7F000609F73 /* NumberStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberStepView.swift; sourceTree = "<group>"; };
 		118348B52D2FAF660036EB0F /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		119368312CF0784100D8E7F0 /* SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		119368442CF0785200D8E7F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,10 +65,10 @@
 			children = (
 				11DF95702D11712100E3C6EB /* RollerImageView.swift */,
 				11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */,
+				117A82C62D36C7F000609F73 /* NumberStepView.swift */,
 				1160A15C2D34FC1C00C27726 /* NumbersView.swift */,
 				118348B52D2FAF660036EB0F /* ButtonView.swift */,
 				119EEB1B2D1C076D0087704A /* StarView.swift */,
-				117A82C62D36C7F000609F73 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				118348B62D2FAF660036EB0F /* ButtonView.swift in Sources */,
 				119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */,
 				11BBCAF02D363C0100DEE8FA /* ScoreView.swift in Sources */,
-				117A82C72D36C7F000609F73 /* TestView.swift in Sources */,
+				117A82C72D36C7F000609F73 /* NumberStepView.swift in Sources */,
 				11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */,
 				112918C42CF85F540072CC2B /* ContentView.swift in Sources */,
 			);

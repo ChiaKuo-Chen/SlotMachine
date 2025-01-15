@@ -13,7 +13,8 @@ struct RollerImageView: View {
     @Binding var rollerImageIndex : [Int]
     @Binding var coinValue : Int
     @Binding var bet : Int
-
+    @Binding var maskOn : Bool
+    
     var buttonPressed : Bool
     
     private let imageList : [String] = ["seven", "cherry", "lemon", "cherry"]
@@ -142,20 +143,27 @@ struct RollerImageView: View {
     }
     
     func updateCoinValue(){
-        
+                
         let imageSet = Set(imageList)
         //["seven", "cherry", "lemon", "diamond", "orange"]
+
+        maskOn = true
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4){
             for item in imageSet {
                 if checkIsWinOrNot(item) {
+
                     switch item {
-                    case "seven": coinValue += 1000*bet
+                    case "seven": coinValue += 300*bet
                     case "diamond": coinValue += 50*bet
                     case "lemon": coinValue += 3*bet
                     case "cherry": coinValue += 2*bet
                     default: break
                     }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                        maskOn = false
+                    } // Prevent Player Play While The Value is Updating
                 }
             }
         }
@@ -233,10 +241,12 @@ struct RollerShape: Shape {
         @State var rollerImageIndex : [Int] = [0, 0, 8]
         @State var coinValue : Int = 300
         @State var bet : Int = 1
+        @State var maskOn : Bool = false
         
         var body: some View {
-            RollerImageView(rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, buttonPressed: false)
+            RollerImageView(rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, maskOn: $maskOn, buttonPressed: false)
         }
+        
     }
     
     return Preview()
