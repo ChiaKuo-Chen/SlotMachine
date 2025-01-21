@@ -33,7 +33,9 @@ struct ButtonView: View {
     var betOneButton : some View {
         Button(action: {
             if playButtonPressed == false {
-                betPlusOne(&bet, &coinValue)
+                Task {
+                    try await coinInsert(1)
+                }
             }
         }, label: {
             Text("BET\nONE")
@@ -44,23 +46,20 @@ struct ButtonView: View {
     var betMaxButton : some View {
         Button(action: {
             if playButtonPressed == false {
-                betPlusOne(&bet, &coinValue)
-                betPlusOne(&bet, &coinValue)
-                betPlusOne(&bet, &coinValue)
-                spinTheWheel(bet)
+
+                let count = 3 - bet
+                Task {
+                    try await coinInsert(count)
+                }
+
+                DispatchQueue.main.asyncAfter(deadline: .now()+Double(count)*0.3+0.5){
+                    spinTheWheel(bet)
+                }
+
             }
         }, label: {
             Text("BET\nMAX")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundStyle(.black)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 10)
-                .background{
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundStyle(.white)
-                }
-            
+                .modifier(ButtonModifier())
         }) // BUTTON
     } // BetThree VIEW
     
@@ -69,11 +68,16 @@ struct ButtonView: View {
         Button(action: {
             if playButtonPressed == false {
                 if bet == 0 {
-                    if ( previousBet != 0 ? previousBet : 3 ) <= coinValue {
-                        bet = ( previousBet != 0 ? previousBet : 3 )
-                        coinValue -= bet
+                    let count = ( previousBet != 0 ? previousBet : 3 )
+                    
+                    Task {
+                        try await coinInsert(count)
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now()+Double(count)*0.3+0.5){
                         spinTheWheel(bet)
                     }
+
                 } else {
                     spinTheWheel(bet)
                 }
@@ -85,13 +89,17 @@ struct ButtonView: View {
         
     } // PLAY BUTTON
     
-    func betPlusOne(_ bet : inout Int, _ coinValue : inout Int) {
-        if bet < 3 && coinValue >= 1 {
-            bet += 1
-            previousBet = bet
-            coinValue -= 1
+    func coinInsert( _ coin : Int) async throws {
+        for _ in 0..<coin {
+            if bet < 3 && coinValue >= 1 {
+                playSound(sound: "dong4", type: "mp3")
+                bet += 1
+                coinValue -= 1
+                previousBet = bet
+                try await Task.sleep(for: .seconds(0.3))
+            }
         }
-    } // BET + 1
+    } // BET += in
     
     func spinTheWheel(_ bet: Int) {
         playButtonPressed.toggle()

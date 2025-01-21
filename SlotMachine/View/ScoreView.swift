@@ -18,7 +18,7 @@ struct ScoreView: View {
 
     var body: some View {
 
-        VStack(spacing: 5) {
+        VStack{
             HStack {
                 Spacer()
                 VStack {
@@ -34,7 +34,7 @@ struct ScoreView: View {
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
-                    NumberStepView(number: (bet==0 ? previousBet : bet), digits: 1)
+                    NumbersView(number: (bet==0 ? previousBet : bet), digits: 1)
                 } // VSTACK
                 Spacer()
             } // HSTACK

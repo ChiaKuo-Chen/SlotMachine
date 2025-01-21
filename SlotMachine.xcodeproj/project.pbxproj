@@ -13,7 +13,18 @@
 		118348B62D2FAF660036EB0F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118348B52D2FAF660036EB0F /* ButtonView.swift */; };
 		119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119368462CF0785200D8E7F0 /* SlotMachineApp.swift */; };
 		1193684B2CF0785200D8E7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119368442CF0785200D8E7F0 /* Assets.xcassets */; };
-		119EEB1C2D1C076D0087704A /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119EEB1B2D1C076D0087704A /* StarView.swift */; };
+		1196F19B2D3E96D100128DEE /* jackpotCoin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1196F19A2D3E96D100128DEE /* jackpotCoin.mp3 */; };
+		11AFEC032D3E331600F3FD32 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFEC012D3E331600F3FD32 /* PlaySound.swift */; };
+		11AFEC0E2D3E41FF00F3FD32 /* reel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC0D2D3E41FF00F3FD32 /* reel.mp3 */; };
+		11AFEC122D3E451500F3FD32 /* ding1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC0F2D3E451500F3FD32 /* ding1.mp3 */; };
+		11AFEC132D3E451500F3FD32 /* ding2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC102D3E451500F3FD32 /* ding2.mp3 */; };
+		11AFEC142D3E451500F3FD32 /* ding3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC112D3E451500F3FD32 /* ding3.mp3 */; };
+		11AFEC162D3E473600F3FD32 /* ding4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC152D3E473600F3FD32 /* ding4.mp3 */; };
+		11AFEC182D3E47A800F3FD32 /* ding5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC172D3E47A800F3FD32 /* ding5.mp3 */; };
+		11AFEC1A2D3E4E4000F3FD32 /* dong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC192D3E4E4000F3FD32 /* dong.mp3 */; };
+		11AFEC1C2D3E4F2800F3FD32 /* dong2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC1B2D3E4F2800F3FD32 /* dong2.mp3 */; };
+		11AFEC1E2D3E522000F3FD32 /* dong3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC1D2D3E522000F3FD32 /* dong3.mp3 */; };
+		11AFEC222D3E532C00F3FD32 /* dong4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC212D3E532C00F3FD32 /* dong4.mp3 */; };
 		11BBCAF02D363C0100DEE8FA /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */; };
 		11CB26332D365246008A6EEE /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB26322D365246008A6EEE /* ButtonModifier.swift */; };
 		11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF95702D11712100E3C6EB /* RollerImageView.swift */; };
@@ -27,7 +38,18 @@
 		119368312CF0784100D8E7F0 /* SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		119368442CF0785200D8E7F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		119368462CF0785200D8E7F0 /* SlotMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineApp.swift; sourceTree = "<group>"; };
-		119EEB1B2D1C076D0087704A /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		1196F19A2D3E96D100128DEE /* jackpotCoin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jackpotCoin.mp3; sourceTree = "<group>"; };
+		11AFEC012D3E331600F3FD32 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		11AFEC0D2D3E41FF00F3FD32 /* reel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reel.mp3; sourceTree = "<group>"; };
+		11AFEC0F2D3E451500F3FD32 /* ding1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding1.mp3; sourceTree = "<group>"; };
+		11AFEC102D3E451500F3FD32 /* ding2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding2.mp3; sourceTree = "<group>"; };
+		11AFEC112D3E451500F3FD32 /* ding3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding3.mp3; sourceTree = "<group>"; };
+		11AFEC152D3E473600F3FD32 /* ding4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding4.mp3; sourceTree = "<group>"; };
+		11AFEC172D3E47A800F3FD32 /* ding5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding5.mp3; sourceTree = "<group>"; };
+		11AFEC192D3E4E4000F3FD32 /* dong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dong.mp3; sourceTree = "<group>"; };
+		11AFEC1B2D3E4F2800F3FD32 /* dong2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dong2.mp3; sourceTree = "<group>"; };
+		11AFEC1D2D3E522000F3FD32 /* dong3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dong3.mp3; sourceTree = "<group>"; };
+		11AFEC212D3E532C00F3FD32 /* dong4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dong4.mp3; sourceTree = "<group>"; };
 		11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		11CB26322D365246008A6EEE /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		11DF95702D11712100E3C6EB /* RollerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerImageView.swift; sourceTree = "<group>"; };
@@ -65,10 +87,9 @@
 			children = (
 				11DF95702D11712100E3C6EB /* RollerImageView.swift */,
 				11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */,
-				117A82C62D36C7F000609F73 /* NumberStepView.swift */,
 				1160A15C2D34FC1C00C27726 /* NumbersView.swift */,
+				117A82C62D36C7F000609F73 /* NumberStepView.swift */,
 				118348B52D2FAF660036EB0F /* ButtonView.swift */,
-				119EEB1B2D1C076D0087704A /* StarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,9 +117,37 @@
 				112918C32CF85F540072CC2B /* App */,
 				1192CB272D0186CF0062D472 /* View */,
 				118348B82D2FB13D0036EB0F /* Modifier */,
+				11AFEC022D3E331600F3FD32 /* Utility */,
+				11AFEC042D3E335700F3FD32 /* Sound */,
 				119368442CF0785200D8E7F0 /* Assets.xcassets */,
 			);
 			path = SlotMachine;
+			sourceTree = "<group>";
+		};
+		11AFEC022D3E331600F3FD32 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				11AFEC012D3E331600F3FD32 /* PlaySound.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		11AFEC042D3E335700F3FD32 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				11AFEC0D2D3E41FF00F3FD32 /* reel.mp3 */,
+				11AFEC0F2D3E451500F3FD32 /* ding1.mp3 */,
+				11AFEC102D3E451500F3FD32 /* ding2.mp3 */,
+				11AFEC112D3E451500F3FD32 /* ding3.mp3 */,
+				11AFEC152D3E473600F3FD32 /* ding4.mp3 */,
+				11AFEC172D3E47A800F3FD32 /* ding5.mp3 */,
+				11AFEC192D3E4E4000F3FD32 /* dong.mp3 */,
+				11AFEC1B2D3E4F2800F3FD32 /* dong2.mp3 */,
+				11AFEC1D2D3E522000F3FD32 /* dong3.mp3 */,
+				11AFEC212D3E532C00F3FD32 /* dong4.mp3 */,
+				1196F19A2D3E96D100128DEE /* jackpotCoin.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +211,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AFEC1E2D3E522000F3FD32 /* dong3.mp3 in Resources */,
+				11AFEC122D3E451500F3FD32 /* ding1.mp3 in Resources */,
+				1196F19B2D3E96D100128DEE /* jackpotCoin.mp3 in Resources */,
+				11AFEC182D3E47A800F3FD32 /* ding5.mp3 in Resources */,
+				11AFEC162D3E473600F3FD32 /* ding4.mp3 in Resources */,
+				11AFEC132D3E451500F3FD32 /* ding2.mp3 in Resources */,
+				11AFEC142D3E451500F3FD32 /* ding3.mp3 in Resources */,
+				11AFEC222D3E532C00F3FD32 /* dong4.mp3 in Resources */,
+				11AFEC0E2D3E41FF00F3FD32 /* reel.mp3 in Resources */,
+				11AFEC1A2D3E4E4000F3FD32 /* dong.mp3 in Resources */,
+				11AFEC1C2D3E4F2800F3FD32 /* dong2.mp3 in Resources */,
 				1193684B2CF0785200D8E7F0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,10 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1160A15D2D34FC1C00C27726 /* NumbersView.swift in Sources */,
-				119EEB1C2D1C076D0087704A /* StarView.swift in Sources */,
 				11CB26332D365246008A6EEE /* ButtonModifier.swift in Sources */,
 				118348B62D2FAF660036EB0F /* ButtonView.swift in Sources */,
 				119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */,
+				11AFEC032D3E331600F3FD32 /* PlaySound.swift in Sources */,
 				11BBCAF02D363C0100DEE8FA /* ScoreView.swift in Sources */,
 				117A82C72D36C7F000609F73 /* NumberStepView.swift in Sources */,
 				11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */,

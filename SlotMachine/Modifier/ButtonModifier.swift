@@ -18,6 +18,8 @@ struct ButtonModifier: ViewModifier {
             .background{
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundStyle(.white)
+                    .shadow(color: .gray, radius: 0, x: -5, y: 5)
+                    .shadow(color: .gray, radius: 0, x: 5, y: 5)
             }
 
     }

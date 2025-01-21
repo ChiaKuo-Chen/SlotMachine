@@ -33,10 +33,10 @@ struct StepView: View {
     var body: some View {
         
         let numberStep = ( start < goal ? +1 : -1)
-        let stepDuration : TimeInterval = ( abs(goal-start)<10 ? 0.2 : 0.001 )
+        let stepDuration : TimeInterval = ( abs(goal-start)<10 ? 0.2 : 0.005 )
         
         NumbersView(number: start, digits: digits)
-            .onChange(of: goal){
+            .onChange(of: goal){                
                 Timer.scheduledTimer(withTimeInterval: stepDuration, repeats: true){ timer in
                     if start != goal {
                         start += numberStep

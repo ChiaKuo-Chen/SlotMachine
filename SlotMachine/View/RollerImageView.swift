@@ -88,7 +88,7 @@ struct RollerImageView: View {
                 updateCoinValue()
             }
         }
-                
+        
     }
     
     
@@ -123,16 +123,27 @@ struct RollerImageView: View {
     }
     
     func updateRollerIndex(){
+        
+        playSound(sound: "reel", type: "mp3", duration: 1.4)
         withAnimation(.interactiveSpring(response: 0.5)){
             rollerImageIndex[0] = Int.random(in: 20...30)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            playSound2(sound: "ding1", type: "mp3")
         }
         
         withAnimation(.interactiveSpring(response: 1.0)){
             rollerImageIndex[1] = Int.random(in: 40...60)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            playSound2(sound: "ding2", type: "mp3")
+        }
         
         withAnimation(.interactiveSpring(response: 1.4)){
             rollerImageIndex[2] = Int.random(in: 60...90)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4){
+            playSound2(sound: "ding3", type: "mp3")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
@@ -143,25 +154,29 @@ struct RollerImageView: View {
     }
     
     func updateCoinValue(){
-                
+        
         let imageSet = Set(imageList)
-        //["seven", "cherry", "lemon", "diamond", "orange"]
-
-        maskOn = true
-
+        var duration = 1.0
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4){
             for item in imageSet {
                 if checkIsWinOrNot(item) {
-
                     switch item {
-                    case "seven": coinValue += 300*bet
-                    case "diamond": coinValue += 50*bet
-                    case "lemon": coinValue += 3*bet
-                    case "cherry": coinValue += 2*bet
+                        
+                    case "seven":
+                        coinValue += 300*bet
+                        duration = 1.5*Double(bet)+0.1
+                    case "lemon":
+                        coinValue += 10*bet
+                    case "cherry":
+                        coinValue += 2*bet
                     default: break
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                    playSound(sound: "jackpotCoin", type: "mp3", duration: duration)
+                    
+                    maskOn = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + duration){
                         maskOn = false
                     } // Prevent Player Play While The Value is Updating
                 }
@@ -171,8 +186,8 @@ struct RollerImageView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
             bet = 0
         }
-
-
+        
+        
     }
     
     private func checkIsWinOrNot(_ item: String) -> Bool {
@@ -183,7 +198,7 @@ struct RollerImageView: View {
             return true
         }
         return false
-
+        
     }
     
 }
