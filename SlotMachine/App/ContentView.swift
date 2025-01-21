@@ -42,7 +42,7 @@ struct ContentView: View {
                 ScoreView(coinValue: coinValue, bet: bet, previousBet: previousBet)
                     .padding()
                 
-                ButtonView(playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet)
+                ButtonView(playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet, maskOn: $maskOn)
                 
                 
             }

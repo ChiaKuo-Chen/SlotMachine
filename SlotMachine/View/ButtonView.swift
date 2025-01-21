@@ -14,7 +14,8 @@ struct ButtonView: View {
     @Binding var coinValue : Int
     @Binding var bet : Int
     @Binding var previousBet : Int
-    
+    @Binding var maskOn : Bool
+
     // MARK: - BODY
     var body: some View {
         
@@ -46,16 +47,14 @@ struct ButtonView: View {
     var betMaxButton : some View {
         Button(action: {
             if playButtonPressed == false {
-
                 let count = 3 - bet
                 Task {
+                    maskOn = true
                     try await coinInsert(count)
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now()+Double(count)*0.3+0.5){
+                    try await Task.sleep(for: .seconds(0.3))
+                    maskOn = false
                     spinTheWheel(bet)
                 }
-
             }
         }, label: {
             Text("BET\nMAX")
@@ -69,15 +68,13 @@ struct ButtonView: View {
             if playButtonPressed == false {
                 if bet == 0 {
                     let count = ( previousBet != 0 ? previousBet : 3 )
-                    
                     Task {
+                        maskOn = true
                         try await coinInsert(count)
-                    }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now()+Double(count)*0.3+0.5){
+                        try await Task.sleep(for: .seconds(0.3))
+                        maskOn = false
                         spinTheWheel(bet)
                     }
-
                 } else {
                     spinTheWheel(bet)
                 }
@@ -120,11 +117,12 @@ struct ButtonView: View {
         @State var coinValue : Int = 100
         @State var bet : Int = 1
         @State var previousBet : Int = 1
-        
+        @State var maskOn : Bool = false
+
         var body: some View {
             ZStack {
                 Color.blue
-                ButtonView(playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet)
+                ButtonView(playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet, maskOn: $maskOn)
             }
         }
     }
