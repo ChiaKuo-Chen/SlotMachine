@@ -15,7 +15,7 @@ struct ButtonView: View {
     @Binding var bet : Int
     @Binding var previousBet : Int
     @Binding var maskOn : Bool
-
+    
     // MARK: - BODY
     var body: some View {
         
@@ -40,11 +40,12 @@ struct ButtonView: View {
             }
         }, label: {
             Text("BET\nONE")
-                .modifier(ButtonModifier())
         }) // Button
+        .buttonStyle(ButtonModifier())
     } // BetOne VIEW
     
     var betMaxButton : some View {
+        
         Button(action: {
             if playButtonPressed == false {
                 let count = 3 - bet
@@ -58,8 +59,9 @@ struct ButtonView: View {
             }
         }, label: {
             Text("BET\nMAX")
-                .modifier(ButtonModifier())
         }) // BUTTON
+        .buttonStyle(ButtonModifier())
+
     } // BetThree VIEW
     
     var playButton : some View {
@@ -81,9 +83,9 @@ struct ButtonView: View {
             }
         }, label: {
             Text("SPIN\nREELS")
-                .modifier(ButtonModifier())
         })
-        
+        .buttonStyle(ButtonModifier())
+
     } // PLAY BUTTON
     
     func coinInsert( _ coin : Int) async throws {

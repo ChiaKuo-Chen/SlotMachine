@@ -23,6 +23,7 @@ struct ScoreView: View {
                 Spacer()
                 VStack {
                     Text("CREDITS")
+                        .shadow(color: .gray, radius: 0, x: 3, y: 3)
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
@@ -31,6 +32,7 @@ struct ScoreView: View {
                 Spacer()
                 VStack {
                     Text("BET")
+                        .shadow(color: .gray, radius: 0, x: 3, y: 3)
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundStyle(.white)

@@ -38,7 +38,7 @@ struct ContentView: View {
                 
                 RollerImageView(rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, maskOn: $maskOn, buttonPressed: playButtonPressed)
                     .scaleEffect(0.9)
-                                
+
                 ScoreView(coinValue: coinValue, bet: bet, previousBet: previousBet)
                     .padding()
                 

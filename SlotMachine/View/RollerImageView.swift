@@ -30,13 +30,17 @@ struct RollerImageView: View {
     // MARK: - BODY
     var body: some View {
         
-        
         ZStack {
             
+            RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+                .foregroundStyle(Color.gray)
+                .frame(width: 380, height: 260)
+                .offset(y: 5)
+
             RoundedRectangle(cornerRadius: 5)
                 .foregroundStyle(Color.white)
                 .frame(width: imageSize*3+imageHorizontalSpace*3, height: imageSize*2+imageVerticalSpace*2)
-            
+
             HStack(spacing: imageHorizontalSpace) {
                 
                 ForEach(0..<rollerImageIndex.count, id: \.self) { index in
@@ -126,21 +130,21 @@ struct RollerImageView: View {
         
         playSound(sound: "reel", type: "mp3", duration: 1.4)
         withAnimation(.interactiveSpring(response: 0.5)){
-            rollerImageIndex[0] = Int.random(in: 20...30)
+            rollerImageIndex[0] = Int.random(in: 20..<32)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             playSound2(sound: "ding1", type: "mp3")
         }
         
         withAnimation(.interactiveSpring(response: 1.0)){
-            rollerImageIndex[1] = Int.random(in: 40...60)
+            rollerImageIndex[1] = Int.random(in: 40..<64)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             playSound2(sound: "ding2", type: "mp3")
         }
         
         withAnimation(.interactiveSpring(response: 1.4)){
-            rollerImageIndex[2] = Int.random(in: 60...90)
+            rollerImageIndex[2] = Int.random(in: 60..<96)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4){
             playSound2(sound: "ding3", type: "mp3")
@@ -253,7 +257,7 @@ struct RollerShape: Shape {
 #Preview {
     struct Preview: View {
         
-        @State var rollerImageIndex : [Int] = [0, 0, 8]
+        @State var rollerImageIndex : [Int] = [4, 4, 5]
         @State var coinValue : Int = 300
         @State var bet : Int = 1
         @State var maskOn : Bool = false

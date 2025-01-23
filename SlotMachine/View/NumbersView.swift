@@ -25,11 +25,11 @@ struct NumbersView: View {
                     .scaledToFit()
                     .frame(width: 30)
             }
-            
         } // HSTACK
         .padding()
         .background(
-            Rectangle()
+            RoundedRectangle(cornerRadius: 10)
+                .shadow(color: Color.gray, radius: 0, x: 0, y: 10)
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 5))
         )
         
