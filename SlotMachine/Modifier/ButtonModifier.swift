@@ -17,6 +17,7 @@ struct ButtonModifier: ButtonStyle {
             .multilineTextAlignment(.center)
             .padding(.horizontal, 10)
             .padding(.vertical, 10)
+            .shadow(color: Color.black, radius: 2, x: 0, y: 0)
             .offset(y: configuration.isPressed ? 5 : .zero)
             .background{
                 RoundedRectangle(cornerRadius: 20)
@@ -29,21 +30,3 @@ struct ButtonModifier: ButtonStyle {
     
 }
 
-//struct ButtonStyle: ButtonStyle {
-//
-//    func makeBody(configuration: Self.Configuration) -> some View {
-//        configuration.label
-//            .font(.title)
-//            .fontWeight(.bold)
-//            .foregroundStyle(.black)
-//            .padding(.horizontal, 10)
-//            .padding(.vertical, 10)
-//            .background{
-//
-//                RoundedRectangle(cornerRadius: 20)
-//                    .foregroundStyle(.white)
-//                    .shadow(color: .gray, radius: 0, x: -5, y: 5)
-//                    .shadow(color: .gray, radius: 0, x: 5, y: 5)
-//            }
-//    }
-//}

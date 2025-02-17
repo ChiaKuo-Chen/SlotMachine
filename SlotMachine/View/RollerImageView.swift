@@ -162,7 +162,7 @@ struct RollerImageView: View {
         let imageSet = Set(imageList)
         var duration = 1.0
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.4){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
             for item in imageSet {
                 if checkIsWinOrNot(item) {
                     switch item {

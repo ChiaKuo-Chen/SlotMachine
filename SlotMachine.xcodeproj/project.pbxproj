@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		112918C42CF85F540072CC2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112918C02CF85F540072CC2B /* ContentView.swift */; };
 		1160A15D2D34FC1C00C27726 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160A15C2D34FC1C00C27726 /* NumbersView.swift */; };
+		116BA4542D427CF1005D8CF3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BA4532D427CF1005D8CF3 /* TitleView.swift */; };
+		116BA45C2D42872C005D8CF3 /* DFMingSUBold-B5.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 116BA45B2D42872C005D8CF3 /* DFMingSUBold-B5.ttf */; };
 		117A82C72D36C7F000609F73 /* NumberStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A82C62D36C7F000609F73 /* NumberStepView.swift */; };
 		118348B62D2FAF660036EB0F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118348B52D2FAF660036EB0F /* ButtonView.swift */; };
 		119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119368462CF0785200D8E7F0 /* SlotMachineApp.swift */; };
@@ -28,11 +30,15 @@
 		11BBCAF02D363C0100DEE8FA /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */; };
 		11CB26332D365246008A6EEE /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB26322D365246008A6EEE /* ButtonModifier.swift */; };
 		11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF95702D11712100E3C6EB /* RollerImageView.swift */; };
+		11EBFFB02D4778660046D0AA /* DFPMingSUBold-B5.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11EBFFAF2D4778660046D0AA /* DFPMingSUBold-B5.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		112918C02CF85F540072CC2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1160A15C2D34FC1C00C27726 /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
+		116BA4532D427CF1005D8CF3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		116BA45A2D42848B005D8CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		116BA45B2D42872C005D8CF3 /* DFMingSUBold-B5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DFMingSUBold-B5.ttf"; sourceTree = "<group>"; };
 		117A82C62D36C7F000609F73 /* NumberStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberStepView.swift; sourceTree = "<group>"; };
 		118348B52D2FAF660036EB0F /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		119368312CF0784100D8E7F0 /* SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +59,7 @@
 		11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		11CB26322D365246008A6EEE /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		11DF95702D11712100E3C6EB /* RollerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerImageView.swift; sourceTree = "<group>"; };
+		11EBFFAF2D4778660046D0AA /* DFPMingSUBold-B5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DFPMingSUBold-B5.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		112918C32CF85F540072CC2B /* App */ = {
+		116BA4572D42817E005D8CF3 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				112918C02CF85F540072CC2B /* ContentView.swift */,
+				116BA45B2D42872C005D8CF3 /* DFMingSUBold-B5.ttf */,
+				11EBFFAF2D4778660046D0AA /* DFPMingSUBold-B5.ttf */,
 			);
-			path = App;
+			path = Font;
 			sourceTree = "<group>";
 		};
 		118348B82D2FB13D0036EB0F /* Modifier */ = {
@@ -85,6 +93,8 @@
 		1192CB272D0186CF0062D472 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				112918C02CF85F540072CC2B /* ContentView.swift */,
+				116BA4532D427CF1005D8CF3 /* TitleView.swift */,
 				11DF95702D11712100E3C6EB /* RollerImageView.swift */,
 				11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */,
 				1160A15C2D34FC1C00C27726 /* NumbersView.swift */,
@@ -113,12 +123,13 @@
 		119368472CF0785200D8E7F0 /* SlotMachine */ = {
 			isa = PBXGroup;
 			children = (
+				116BA45A2D42848B005D8CF3 /* Info.plist */,
 				119368462CF0785200D8E7F0 /* SlotMachineApp.swift */,
-				112918C32CF85F540072CC2B /* App */,
 				1192CB272D0186CF0062D472 /* View */,
 				118348B82D2FB13D0036EB0F /* Modifier */,
 				11AFEC022D3E331600F3FD32 /* Utility */,
 				11AFEC042D3E335700F3FD32 /* Sound */,
+				116BA4572D42817E005D8CF3 /* Font */,
 				119368442CF0785200D8E7F0 /* Assets.xcassets */,
 			);
 			path = SlotMachine;
@@ -216,9 +227,11 @@
 				1196F19B2D3E96D100128DEE /* jackpotCoin.mp3 in Resources */,
 				11AFEC182D3E47A800F3FD32 /* ding5.mp3 in Resources */,
 				11AFEC162D3E473600F3FD32 /* ding4.mp3 in Resources */,
+				11EBFFB02D4778660046D0AA /* DFPMingSUBold-B5.ttf in Resources */,
 				11AFEC132D3E451500F3FD32 /* ding2.mp3 in Resources */,
 				11AFEC142D3E451500F3FD32 /* ding3.mp3 in Resources */,
 				11AFEC222D3E532C00F3FD32 /* dong4.mp3 in Resources */,
+				116BA45C2D42872C005D8CF3 /* DFMingSUBold-B5.ttf in Resources */,
 				11AFEC0E2D3E41FF00F3FD32 /* reel.mp3 in Resources */,
 				11AFEC1A2D3E4E4000F3FD32 /* dong.mp3 in Resources */,
 				11AFEC1C2D3E4F2800F3FD32 /* dong2.mp3 in Resources */,
@@ -242,6 +255,7 @@
 				117A82C72D36C7F000609F73 /* NumberStepView.swift in Sources */,
 				11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */,
 				112918C42CF85F540072CC2B /* ContentView.swift in Sources */,
+				116BA4542D427CF1005D8CF3 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +392,8 @@
 				DEVELOPMENT_TEAM = WBC4T5V7CF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlotMachine/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -407,6 +423,8 @@
 				DEVELOPMENT_TEAM = WBC4T5V7CF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SlotMachine/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
