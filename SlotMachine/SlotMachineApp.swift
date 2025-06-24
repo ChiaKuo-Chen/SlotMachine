@@ -2,7 +2,7 @@
 //  SlotMachineApp.swift
 //  SlotMachine
 //
-//  Created by 陳嘉國 on 2024/11/22.
+//  Created by 陳嘉國
 //
 
 import SwiftUI

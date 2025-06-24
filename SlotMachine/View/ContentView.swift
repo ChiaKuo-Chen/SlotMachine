@@ -12,12 +12,14 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: - PROPERTIES
+    @StateObject var audioManager = AudioManager()
+
     @State private var rollerImageIndex : [Int] = [4, 4, 5]
     @State private var coinValue : Int = 100
     @State private var playButtonPressed : Bool = false
     @State private var bet : Int = 0
     @State var previousBet : Int = 0
-    @State var maskOn : Bool = false
+    @State var isRolling : Bool = false
     
     // MARK: - BODY
     
@@ -25,37 +27,53 @@ struct ContentView: View {
         
         ZStack {
             
-            VStack(spacing: 0) {
-                Image("background3")
-                    .resizable()
-                Image("background3")
-                    .resizable()
-            }
-            .ignoresSafeArea()
+            Image("background3")
+                .resizable()
             
-            VStack(spacing: 10) {
+            VStack {
                 
+                HStack {
+                    Spacer()
+                    
+                    Image(systemName: audioManager.isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill")
+                        .resizable()
+                        .frame(width: 36, height: 36)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 40)
+                        .padding(.vertical, 16)
+                        .offset(y: 12)
+                        .onTapGesture {
+                            audioManager.toggleMute()
+                        }
+                }
+                
+                Spacer()
                 
                 TitleView()
                 
-                RollerImageView(rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, maskOn: $maskOn, buttonPressed: playButtonPressed)
+                Spacer()
+                
+                RollerImageView(audioManager: audioManager, rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, isRolling: $isRolling, buttonPressed: playButtonPressed)
                     .scaleEffect(0.9)
-
+                
+                Spacer()
+                
                 ScoreView(coinValue: coinValue, bet: bet, previousBet: previousBet)
-                    .padding()
                 
-                ButtonView(playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet, maskOn: $maskOn)
+                Spacer()
                 
+                ButtonView(audioManager: audioManager, playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet, isRolling: $isRolling)
+                
+                Spacer()
                 
             }
             
-            if maskOn {
-                Color.black
-                    .opacity(0.001)
-            }
-            
-        } // ZSTACK
-        
+        } //: ZSTACK
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea()
+        .onAppear{
+            print(audioManager.isMuted)
+        }
     }
 }
 

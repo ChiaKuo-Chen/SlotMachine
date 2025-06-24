@@ -9,11 +9,13 @@ import SwiftUI
 
 struct RollerImageView: View {
     
-    // MARK: - PROPERTIES
+    // MARK: - PROPERTIES    
+    @StateObject var audioManager : AudioManager
+
     @Binding var rollerImageIndex : [Int]
     @Binding var coinValue : Int
     @Binding var bet : Int
-    @Binding var maskOn : Bool
+    @Binding var isRolling : Bool
     
     var buttonPressed : Bool
     
@@ -128,26 +130,31 @@ struct RollerImageView: View {
     
     func updateRollerIndex(){
         
-        playSound(sound: "reel", type: "mp3", duration: 1.4)
+        audioManager.playSound(sound: "reel", type: "mp3", duration: 1.4)
         withAnimation(.interactiveSpring(response: 0.5)){
             rollerImageIndex[0] = Int.random(in: 20..<32)
+            //rollerImageIndex[0] = 32
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            playSound2(sound: "ding1", type: "mp3")
+            audioManager.playSound2(sound: "ding1", type: "mp3")
         }
         
         withAnimation(.interactiveSpring(response: 1.0)){
             rollerImageIndex[1] = Int.random(in: 40..<64)
+            //rollerImageIndex[1] = 64
         }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-            playSound2(sound: "ding2", type: "mp3")
+            audioManager.playSound2(sound: "ding2", type: "mp3")
         }
         
         withAnimation(.interactiveSpring(response: 1.4)){
             rollerImageIndex[2] = Int.random(in: 60..<96)
+            //rollerImageIndex[2] = 96
+
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4){
-            playSound2(sound: "ding3", type: "mp3")
+            audioManager.playSound2(sound: "ding3", type: "mp3")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
@@ -177,11 +184,11 @@ struct RollerImageView: View {
                     default: break
                     }
                     
-                    playSound(sound: "jackpotCoin", type: "mp3", duration: duration)
+                    audioManager.playSound(sound: "jackpotCoin", type: "mp3", duration: duration)
                     
-                    maskOn = true
+                    isRolling = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + duration){
-                        maskOn = false
+                        isRolling = false
                     } // Prevent Player Play While The Value is Updating
                 }
             }
@@ -256,14 +263,13 @@ struct RollerShape: Shape {
 
 #Preview {
     struct Preview: View {
-        
         @State var rollerImageIndex : [Int] = [4, 4, 5]
         @State var coinValue : Int = 300
         @State var bet : Int = 1
-        @State var maskOn : Bool = false
+        @State var isRolling : Bool = false
         
         var body: some View {
-            RollerImageView(rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, maskOn: $maskOn, buttonPressed: false)
+            RollerImageView(audioManager: AudioManager(), rollerImageIndex: $rollerImageIndex, coinValue: $coinValue, bet: $bet, isRolling: $isRolling, buttonPressed: false)
         }
         
     }

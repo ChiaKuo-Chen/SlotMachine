@@ -16,7 +16,7 @@
 		119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119368462CF0785200D8E7F0 /* SlotMachineApp.swift */; };
 		1193684B2CF0785200D8E7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119368442CF0785200D8E7F0 /* Assets.xcassets */; };
 		1196F19B2D3E96D100128DEE /* jackpotCoin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1196F19A2D3E96D100128DEE /* jackpotCoin.mp3 */; };
-		11AFEC032D3E331600F3FD32 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFEC012D3E331600F3FD32 /* PlaySound.swift */; };
+		11AFEC032D3E331600F3FD32 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFEC012D3E331600F3FD32 /* AudioManager.swift */; };
 		11AFEC0E2D3E41FF00F3FD32 /* reel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC0D2D3E41FF00F3FD32 /* reel.mp3 */; };
 		11AFEC122D3E451500F3FD32 /* ding1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC0F2D3E451500F3FD32 /* ding1.mp3 */; };
 		11AFEC132D3E451500F3FD32 /* ding2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11AFEC102D3E451500F3FD32 /* ding2.mp3 */; };
@@ -45,7 +45,7 @@
 		119368442CF0785200D8E7F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		119368462CF0785200D8E7F0 /* SlotMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineApp.swift; sourceTree = "<group>"; };
 		1196F19A2D3E96D100128DEE /* jackpotCoin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jackpotCoin.mp3; sourceTree = "<group>"; };
-		11AFEC012D3E331600F3FD32 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		11AFEC012D3E331600F3FD32 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		11AFEC0D2D3E41FF00F3FD32 /* reel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reel.mp3; sourceTree = "<group>"; };
 		11AFEC0F2D3E451500F3FD32 /* ding1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding1.mp3; sourceTree = "<group>"; };
 		11AFEC102D3E451500F3FD32 /* ding2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding2.mp3; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 				116BA4532D427CF1005D8CF3 /* TitleView.swift */,
 				11DF95702D11712100E3C6EB /* RollerImageView.swift */,
 				11BBCAEF2D363C0100DEE8FA /* ScoreView.swift */,
-				1160A15C2D34FC1C00C27726 /* NumbersView.swift */,
 				117A82C62D36C7F000609F73 /* NumberStepView.swift */,
+				1160A15C2D34FC1C00C27726 /* NumbersView.swift */,
 				118348B52D2FAF660036EB0F /* ButtonView.swift */,
 			);
 			path = View;
@@ -138,7 +138,7 @@
 		11AFEC022D3E331600F3FD32 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				11AFEC012D3E331600F3FD32 /* PlaySound.swift */,
+				11AFEC012D3E331600F3FD32 /* AudioManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 				11CB26332D365246008A6EEE /* ButtonModifier.swift in Sources */,
 				118348B62D2FAF660036EB0F /* ButtonView.swift in Sources */,
 				119368492CF0785200D8E7F0 /* SlotMachineApp.swift in Sources */,
-				11AFEC032D3E331600F3FD32 /* PlaySound.swift in Sources */,
+				11AFEC032D3E331600F3FD32 /* AudioManager.swift in Sources */,
 				11BBCAF02D363C0100DEE8FA /* ScoreView.swift in Sources */,
 				117A82C72D36C7F000609F73 /* NumberStepView.swift in Sources */,
 				11DF95712D11712100E3C6EB /* RollerImageView.swift in Sources */,

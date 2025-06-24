@@ -10,11 +10,13 @@ import SwiftUI
 struct ButtonView: View {
     
     // MARK: - PROPERTIES
+    @StateObject var audioManager : AudioManager
+
     @Binding var playButtonPressed : Bool
     @Binding var coinValue : Int
     @Binding var bet : Int
     @Binding var previousBet : Int
-    @Binding var maskOn : Bool
+    @Binding var isRolling : Bool
     
     // MARK: - BODY
     var body: some View {
@@ -42,6 +44,7 @@ struct ButtonView: View {
             Text("BET\nONE")
         }) // Button
         .buttonStyle(ButtonModifier())
+        .disabled(isRolling)
     } // BetOne VIEW
     
     var betMaxButton : some View {
@@ -50,10 +53,10 @@ struct ButtonView: View {
             if playButtonPressed == false {
                 let count = 3 - bet
                 Task {
-                    maskOn = true
+                    isRolling = true
                     try await coinInsert(count)
                     try await Task.sleep(for: .seconds(0.3))
-                    maskOn = false
+                    isRolling = false
                     spinTheWheel(bet)
                 }
             }
@@ -61,6 +64,7 @@ struct ButtonView: View {
             Text("BET\nMAX")
         }) // BUTTON
         .buttonStyle(ButtonModifier())
+        .disabled(isRolling)
 
     } // BetThree VIEW
     
@@ -71,10 +75,10 @@ struct ButtonView: View {
                 if bet == 0 {
                     let count = ( previousBet != 0 ? previousBet : 3 )
                     Task {
-                        maskOn = true
+                        isRolling = true
                         try await coinInsert(count)
                         try await Task.sleep(for: .seconds(0.3))
-                        maskOn = false
+                        isRolling = false
                         spinTheWheel(bet)
                     }
                 } else {
@@ -85,13 +89,14 @@ struct ButtonView: View {
             Text("SPIN\nREELS")
         })
         .buttonStyle(ButtonModifier())
+        .disabled(isRolling)
 
     } // PLAY BUTTON
     
     func coinInsert( _ coin : Int) async throws {
         for _ in 0..<coin {
             if bet < 3 && coinValue >= 1 {
-                playSound(sound: "dong4", type: "mp3")
+                audioManager.playSound(sound: "dong4", type: "mp3")
                 bet += 1
                 coinValue -= 1
                 previousBet = bet
@@ -119,12 +124,12 @@ struct ButtonView: View {
         @State var coinValue : Int = 100
         @State var bet : Int = 1
         @State var previousBet : Int = 1
-        @State var maskOn : Bool = false
+        @State var isRolling : Bool = false
 
         var body: some View {
             ZStack {
                 Color.blue
-                ButtonView(playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet, maskOn: $maskOn)
+                ButtonView(audioManager: AudioManager(), playButtonPressed: $playButtonPressed, coinValue: $coinValue, bet: $bet, previousBet: $previousBet, isRolling: $isRolling)
             }
         }
     }
